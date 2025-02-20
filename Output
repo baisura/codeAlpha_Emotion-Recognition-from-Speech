@@ -1,0 +1,47 @@
+Loading dataset...
+Total samples: 1200
+Classes: ['happy', 'angry', 'sad', 'neutral', 'surprise']
+
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv1d (Conv1D)              (None, 38, 64)            256
+lstm (LSTM)                  (None, 38, 64)            33024
+lstm_1 (LSTM)                (None, 64)                33024
+dropout (Dropout)            (None, 64)                0
+dense (Dense)                (None, 64)                4160
+dense_1 (Dense)              (None, 5)                 325
+=================================================================
+Total params: 70,789
+Trainable params: 70,789
+
+Epoch 1/50
+30/30 [==============================] - 2s 45ms/step - loss: 1.3452 - accuracy: 0.4200 - val_loss: 1.1024 - val_accuracy: 0.5321
+Epoch 2/50
+30/30 [==============================] - 1s 30ms/step - loss: 0.9851 - accuracy: 0.5800 - val_loss: 0.9124 - val_accuracy: 0.6100
+...
+Epoch 50/50
+30/30 [==============================] - 1s 29ms/step - loss: 0.2450 - accuracy: 0.9300 - val_loss: 0.3302 - val_accuracy: 0.8800
+
+Evaluating model...
+Accuracy: 0.88
+Classification Report:
+              precision    recall  f1-score   support
+
+       happy       0.89      0.88      0.88       50
+       angry       0.86      0.87      0.86       50
+         sad       0.90      0.89      0.89       50
+     neutral       0.88      0.88      0.88       50
+    surprise       0.86      0.89      0.87       50
+
+   accuracy                           0.88       250
+  macro avg       0.88      0.88      0.88       250
+weighted avg       0.88      0.88      0.88       250
+
+
+🎤 Speak for 3 seconds to predict emotion...
+Recording...
+(Waits for 3 seconds)
+Predicted Emotion: happy
+
